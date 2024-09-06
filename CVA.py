@@ -15,9 +15,7 @@ from utils.utils import data_sequence, data_sequence_pf, data_sequence_matrix
 
 
 def binary_class_accuracy(y_true, y_pred, target_class):
-    # 选择目标类别的样本
     relevant = y_true == target_class
-    # 计算目标类别中的准确预测
     correct = (y_true[relevant] == y_pred[relevant]).sum()
     return correct / relevant.sum()
 
